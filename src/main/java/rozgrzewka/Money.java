@@ -1,5 +1,7 @@
 package rozgrzewka;
 
+import java.util.Objects;
+
 public class Money {
 
     enum CURRENCY{
@@ -11,6 +13,7 @@ public class Money {
         CURRENCY(float value){
             this.value = value;
         }
+
     }
     private CURRENCY currency;
     private float amount;
@@ -26,6 +29,22 @@ public class Money {
 
     public float getAmount() {
         return amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Money " +currency +
+                " amount " +amount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Money){
+            Money moneyToEqual = (Money) o;
+            return moneyToEqual.getCurrency().equals(this.getCurrency()) &&
+                    moneyToEqual.getAmount() == this.getAmount();
+            }
+        return false;
     }
 
 

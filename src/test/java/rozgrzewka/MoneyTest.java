@@ -24,4 +24,10 @@ class MoneyTest {
         assertEquals(10, euro.getAmount());
     }
 
+    @Test
+    public void testEqualsWhenSameAmount(){
+        Money toEqual = new Money(EUR, 10);
+        assertEquals(true, euro.equals(toEqual));
+    }
+
 }
