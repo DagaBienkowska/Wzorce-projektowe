@@ -1,4 +1,4 @@
-package Observer;
+package Zadania.Observer;
 
 public class Button {
 
